@@ -1,0 +1,33 @@
+body{
+    background-color: black; 
+    color: rgb(202, 255, 253);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+}
+.content{
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    align-content: center;
+    border-color: rgb(255, 2, 52);
+    border-radius: 10px;
+    border: 10px;
+    border-style: solid;
+    
+}
+.number{
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border: 10px;
+    border-style: solid;
+    display: inline-block;
+}
+div{
+    padding: 5px;
+    max-width: 200px;
+}
