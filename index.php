@@ -5,44 +5,95 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="calculator.css">
     <title>calculator</title>
 </head>
 
 <body>
-    <!-- <form action="date.php" method="post"> -->
-        <div class="content">
-            <div class="number">
-                <label for=""></label>
-                <div class="numbers"><input action type="button" value="1"></div>
-                <div class="numbers"><input action type="button" value="2"></div>
-                <div class="numbers"><input action type="button" value="3"></div>
-                <div class="numbers"><input action type="button" value="4"></div>
-                <div class="numbers"><input action type="button" value="5"></div>
-                <div class="numbers"><input action type="button" value="6"></div>
-                <div class="numbers"><input action type="button" value="7"></div>
-                <div class="numbers"><input action type="button" value="8"></div>
-                <div class="numbers"><input action type="button" value="9"></div>
-                <div class="numbers"><input action type="button" value="0"></div>
-            </div>
-            <div class="Symbols">
-            <button id="bt" type="button">login</button>
-            </div>
+    <div class="content">
+        <div class="number">
+            <label for=""></label>
+            <p id="resultado"></p>
+            <td><button onclick="insert('1')">1</button></td>
+            <td><button onclick="insert('2')">2</button></td>
+            <td><button onclick="insert('3')">3</button></td>
+            <td><button onclick="insert('4')">4</button></td>
+            <td><button onclick="insert('5')">5</button></td>
+            <td><button onclick="insert('6')">6</button></td>
+            <td><button onclick="insert('7')">7</button></td>
+            <td><button onclick="insert('8')">8</button></td>
+            <td><button onclick="insert('9')">9</button></td>
+            <td><button onclick="insert('0')">0</button></td>
+
+            <td><button id="clear" class="clear" onclick="clear()">C</button></td>
+            <td><button onclick="soma()">+</button></td>
+            <!--  <td><button onclick="sub()">-</button></td>
+            <td><button onclick="divi()">/</button></td>
+            <td><button onclick="mult()">*</button></td>
+            <td><button onclick="result()">=</button></td> -->
         </div>
+        <!-- <div class="Symbols">
+
+        </div> -->
+    </div>
     </form>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <script>
-    $(document).ready(function () {
-        $("#bt").click(function (e) {
-            function valueNumber() {
-                var number = document.getElementsByClassName("numbers").value;
-            console.debug(number);
-                // var senha = document.getElementById("senha").value;
-            }
-        });
-    });
+    numero = document.getElementById('resultado').innerHTML;
+    numero = parseFloat(numero);
+    numero1 = parseFloat(numero1);
 
+    function insert(num) {
+        var numero = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = numero + num;
+    }
+
+    function clear(clear) {
+        result = document.getElementById('resultado').innerHTML;
+        // document.getElementById('resultado').reset();
+        el("#clear").onclick = clearAll;
+    }
+
+    function soma() {
+        numero1 = numero;
+        numero = '';
+        document.getElementById('resultado').innerHTML = numero + '+';
+        // if (numero.length >= 1) {
+        //     document.getElementById('resultado').innerHTML = 'teste';
+        // } else {
+        //     var numero1 = numero;
+        //     // console.debug(numero1);
+        // }
+        // console.debug(numero1);
+        // console.debug(numero2);
+        // console.debug(numero);
+    }
+
+
+    //  function sub() {
+    //         var numero = document.getElementById('resultado').innerHTML;
+    //         // console.debug(numero);
+    //         document.getElementById('resultado').innerHTML = numero + num;
+    //     }
+
+    //     function divi() {
+    //         var numero = document.getElementById('resultado').innerHTML;
+    //         // console.debug(numero);
+    //         document.getElementById('resultado').innerHTML = numero + num;
+    //     }
+
+    //     function mult() {
+    //         var numero = document.getElementById('resultado').innerHTML;
+    //         // console.debug(numero);
+    //         document.getElementById('resultado').innerHTML = numero + num;
+    //     }
+    // var clearAll = function() {
+    //     oldNum = "";
+    //     theNum = "";
+    //     viewer.innerHTML = "0";
+    //     equals.setAttribute("resultado", resultNum);
+    // };
 </script>
 
 </html>

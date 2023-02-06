@@ -4,10 +4,9 @@ body{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     position: relative;
-}
-.content{
+} 
+ .content{
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -17,8 +16,7 @@ body{
     border-color: rgb(255, 2, 52);
     border-radius: 10px;
     border: 10px;
-    border-style: solid;
-    
+    border-style: solid;    
 }
 .number{
     border-color: rgb(0, 0, 0);
@@ -26,8 +24,10 @@ body{
     border: 10px;
     border-style: solid;
     display: inline-block;
+    font-size: 30px;
 }
 div{
     padding: 5px;
     max-width: 200px;
+    
 }
