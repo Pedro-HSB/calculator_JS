@@ -26,27 +26,54 @@
             <td><button onclick="insert('0')">0</button></td>
 
             <td><button id="clear" class="clear" onclick="clear()">C</button></td>
-            <td><button onclick="soma()">+</button></td>
-            <!--  <td><button onclick="sub()">-</button></td>
-            <td><button onclick="divi()">/</button></td>
-            <td><button onclick="mult()">*</button></td>
-            <td><button onclick="result()">=</button></td> -->
+            <td><button onclick="numero(1,'+')">+</button></td>
+            <td><button onclick="numero(1,'-')">-</button></td>
+            <td><button onclick="numero(1,'/')">/</button></td>
+            <td><button onclick="numero(1,'*')">*</button></td>
+            <td><button onclick="numero(2,'=')">=</button></td>
         </div>
         <!-- <div class="Symbols">
 
+        onclick="calc('+')"
+onclick="calc('-')"
+onclick="calc('/')"
+onclick="calc('*')"
         </div> -->
     </div>
     </form>
 </body>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <script>
-    numero = document.getElementById('resultado').innerHTML;
-    numero = parseFloat(numero);
-    numero1 = parseFloat(numero1);
+    function calc(sym) {
+        switch (sym) {
+            case '+':
+                document.getElementById('resultado').innerHTML = 'soma';
+                break;
+
+            case '-':
+                document.getElementById('resultado').innerHTML = 'sub';
+                break;
+
+            case '/':
+                document.getElementById('resultado').innerHTML = 'div';
+                break;
+
+            case '*':
+                document.getElementById('resultado').innerHTML = 'mult';
+                break;
+
+            default:
+                document.getElementById('resultado').innerHTML = 'error';
+                break;
+        }
+    }
 
     function insert(num) {
         var numero = document.getElementById('resultado').innerHTML;
         document.getElementById('resultado').innerHTML = numero + num;
+        // numero = parseFloat(numero);
+        // numero1 = parseFloat(numero1);
+
     }
 
     function clear(clear) {
@@ -55,10 +82,20 @@
         el("#clear").onclick = clearAll;
     }
 
-    function soma() {
-        numero1 = numero;
-        numero = '';
-        document.getElementById('resultado').innerHTML = numero + '+';
+    function numero(num, sym) {
+        if (num == 1) {
+            numero1 = numero;
+            console.debug(numero1);
+            console.debug(sym);
+            numero = '';
+            document.getElementById('resultado').innerHTML = numero ;
+        }
+        if (num == 2) {
+            calc(sym);
+        } else {
+            numero2 = numero;
+            numero = '';
+        }
         // if (numero.length >= 1) {
         //     document.getElementById('resultado').innerHTML = 'teste';
         // } else {
