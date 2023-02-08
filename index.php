@@ -32,13 +32,6 @@
             <td><button onclick="numero(1,'*')">*</button></td>
             <td><button onclick="numero(2,'=')">=</button></td>
         </div>
-        <!-- <div class="Symbols">
-
-        onclick="calc('+')"
-onclick="calc('-')"
-onclick="calc('/')"
-onclick="calc('*')"
-        </div> -->
     </div>
     </form>
 </body>
@@ -47,19 +40,23 @@ onclick="calc('*')"
     function calc(sym) {
         switch (sym) {
             case '+':
-                document.getElementById('resultado').innerHTML = 'soma';
+                result = parseInt(numero1) + parseInt(numero2);
+                document.getElementById('resultado').innerHTML = result;
                 break;
 
             case '-':
-                document.getElementById('resultado').innerHTML = 'sub';
+                result = numero1 - numero2;
+                document.getElementById('resultado').innerHTML = result;
                 break;
 
             case '/':
-                document.getElementById('resultado').innerHTML = 'div';
+                result = numero1 / numero2;
+                document.getElementById('resultado').innerHTML = result;
                 break;
 
             case '*':
-                document.getElementById('resultado').innerHTML = 'mult';
+                result = numero1 * numero2;
+                document.getElementById('resultado').innerHTML = result;
                 break;
 
             default:
@@ -71,9 +68,6 @@ onclick="calc('*')"
     function insert(num) {
         var numero = document.getElementById('resultado').innerHTML;
         document.getElementById('resultado').innerHTML = numero + num;
-        // numero = parseFloat(numero);
-        // numero1 = parseFloat(numero1);
-
     }
 
     function clear(clear) {
@@ -82,29 +76,28 @@ onclick="calc('*')"
         el("#clear").onclick = clearAll;
     }
 
-    function numero(num, sym) {
+    function numero(num, cont) {
         if (num == 1) {
+            var numero = document.getElementById('resultado').innerHTML;
             numero1 = numero;
-            console.debug(numero1);
-            console.debug(sym);
+            console.debug(num);
+            console.debug(numero);
+            console.debug(cont);
+            sym = cont;
             numero = '';
-            document.getElementById('resultado').innerHTML = numero ;
+            document.getElementById('resultado').innerHTML = numero;
         }
+        var numero = document.getElementById('resultado').innerHTML;
+        numero2 = numero;
+        numero = '';
         if (num == 2) {
+            console.debug(num);
+            console.debug(sym);
+            console.debug(numero);
+            console.debug(numero1);
+            console.debug(numero2);
             calc(sym);
-        } else {
-            numero2 = numero;
-            numero = '';
         }
-        // if (numero.length >= 1) {
-        //     document.getElementById('resultado').innerHTML = 'teste';
-        // } else {
-        //     var numero1 = numero;
-        //     // console.debug(numero1);
-        // }
-        // console.debug(numero1);
-        // console.debug(numero2);
-        // console.debug(numero);
     }
 
 
