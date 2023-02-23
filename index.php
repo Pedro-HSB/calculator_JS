@@ -5,35 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="calculator.css">
+    <link rel="stylesheet" type="text/css" href="calculador.css">
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>calculator</title>
 </head>
 
 <body>
-    <div class="content">
-        <div class="number">
-            <label for=""></label>
-            <p id="resultado"></p>
-            <td><button onclick="insert('1')">1</button></td>
-            <td><button onclick="insert('2')">2</button></td>
-            <td><button onclick="insert('3')">3</button></td>
-            <td><button onclick="insert('4')">4</button></td>
-            <td><button onclick="insert('5')">5</button></td>
-            <td><button onclick="insert('6')">6</button></td>
-            <td><button onclick="insert('7')">7</button></td>
-            <td><button onclick="insert('8')">8</button></td>
-            <td><button onclick="insert('9')">9</button></td>
-            <td><button onclick="insert('0')">0</button></td>
+    <div class="fundo">
+        <div class="calculadora">
+            <div class="content">
+                <div class="number">
+                    <table>
+                        <label for=""></label>
+                        <p class="result" id="resultado"></p>
+                        <tr>
+                            <td><button class="botao" onclick="numero(1,'/')">/</button></td>
+                            <td><button class="botao" onclick="numero(1,'*')">*</button></td>
+                            <td><button class="botao" onclick="numero(1,'-')">-</button></td>
+                            <td><button class="material-icons" onclick="backspace()" class="material-icons">&#xe14a;</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('7')">7</button></td>
+                            <td><button class="botao" onclick="insert('8')">8</button></td>
+                            <td><button class="botao" onclick="insert('9')">9</button></td>
+                            <td><button class="botao" onclick="numero(1,'+')">+</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('4')">4</button></td>
+                            <td><button class="botao" onclick="insert('5')">5</button></td>
+                            <td><button class="botao" onclick="insert('6')">6</button></td>
+                            <td><button class="botao" onclick="insert('π')"> π</button></td>
+                        </tr>
+                        <tr>
+                            <td><button class="botao" onclick="insert('1')">1</button></td>
+                            <td><button class="botao" onclick="insert('2')">2</button></td>
+                            <td><button class="botao" onclick="insert('3')">3</button></td>
+                            <td><button class="botao" onclick="numero(0,'c')">C</button></td>
+                        </tr>
 
-            <td><button id="clear" class="clear" onclick="clear()">C</button></td>
-            <td><button onclick="numero(1,'+')">+</button></td>
-            <td><button onclick="numero(1,'-')">-</button></td>
-            <td><button onclick="numero(1,'/')">/</button></td>
-            <td><button onclick="numero(1,'*')">*</button></td>
-            <td><button onclick="numero(2,'=')">=</button></td>
+                        <tr>
+                            <td><button class="botao" onclick="insert('0')">0</button></td>
+                            <td><button class="botao" onclick="insert(',')">,</button></td>
+                            <td><button class="botao" onclick="insert('.')">.</button></td>
+                            <td><button class="botao" onclick="numero(2,'=')">=</button></td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            </form>
         </div>
     </div>
-    </form>
 </body>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 <script>
@@ -66,23 +91,34 @@
     }
 
     function insert(num) {
+        if (num == 'π') {
+            num = 3.141592;
+            var numero = document.getElementById('resultado').innerHTML;
+            document.getElementById('resultado').innerHTML = numero + num;
+        }
         var numero = document.getElementById('resultado').innerHTML;
         document.getElementById('resultado').innerHTML = numero + num;
     }
 
-    function clear(clear) {
-        result = document.getElementById('resultado').innerHTML;
-        // document.getElementById('resultado').reset();
-        el("#clear").onclick = clearAll;
+    function clear() {
+        document.getElementById('resultado').innerHTML = '';
+    }
+
+    function backspace() {
+        var numero = document.getElementById('resultado').innerHTML;
+        string = numero.slice(0, -1);
+        console.log(string);
+        document.getElementById('resultado').innerHTML = string;
     }
 
     function numero(num, cont) {
+
+        if (num == 0 || cont == 'c') {
+            clear();
+        }
         if (num == 1) {
             var numero = document.getElementById('resultado').innerHTML;
             numero1 = numero;
-            console.debug(num);
-            console.debug(numero);
-            console.debug(cont);
             sym = cont;
             numero = '';
             document.getElementById('resultado').innerHTML = numero;
@@ -99,31 +135,6 @@
             calc(sym);
         }
     }
-
-
-    //  function sub() {
-    //         var numero = document.getElementById('resultado').innerHTML;
-    //         // console.debug(numero);
-    //         document.getElementById('resultado').innerHTML = numero + num;
-    //     }
-
-    //     function divi() {
-    //         var numero = document.getElementById('resultado').innerHTML;
-    //         // console.debug(numero);
-    //         document.getElementById('resultado').innerHTML = numero + num;
-    //     }
-
-    //     function mult() {
-    //         var numero = document.getElementById('resultado').innerHTML;
-    //         // console.debug(numero);
-    //         document.getElementById('resultado').innerHTML = numero + num;
-    //     }
-    // var clearAll = function() {
-    //     oldNum = "";
-    //     theNum = "";
-    //     viewer.innerHTML = "0";
-    //     equals.setAttribute("resultado", resultNum);
-    // };
 </script>
 
 </html>
