@@ -36,7 +36,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 15px;
-    box-shadow: violet;
+    box-shadow: 10px 5px 5px rgba(54, 54, 54, 0.8);
 }
 
 .botao {

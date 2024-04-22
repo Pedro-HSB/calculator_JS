@@ -1,4 +1,9 @@
-
+function inputNum(){
+    let num = document.getElementById('resultado').innerHTML;
+    if (num.length>13){
+        num = num.substring(0, num.length)
+    }
+}
 function calc(sym) {
     switch (sym) {
         case '+':
@@ -53,6 +58,9 @@ function numero(num, cont) {
     if (num == 0 || cont == 'c') {
         clear();
     }
+    if (num == 0 || cont == 'ce') {
+        clear();
+    }
     if (num == 1) {
         let numero = document.getElementById('resultado').innerHTML;
         numero1 = numero;
@@ -64,11 +72,18 @@ function numero(num, cont) {
     numero2 = numero;
     numero = '';
     if (num == 2) {
-        // console.debug(num);
-        // console.debug(sym);
-        // console.debug(numero);
-        // console.debug(numero1);
-        // console.debug(numero2);
         calc(sym);
     }
+}
+
+function quadrado() {
+    let num = document.getElementById('resultado').innerHTML;
+    num = num *num
+    document.getElementById('resultado').innerHTML = num
+}
+
+function raiz() {
+    let num = document.getElementById('resultado').innerHTML;
+    num = Math.sqrt(num)
+    document.getElementById('resultado').innerHTML = num
 }
