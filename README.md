@@ -1,4 +1,4 @@
-# Calculado 🧮✨
+# Calculadora 🧮✨
 
 Calculado é uma calculadora simples, porém prática e eficiente, desenvolvida utilizando HTML, CSS e JavaScript.
 
