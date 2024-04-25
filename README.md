@@ -2,7 +2,7 @@
 
 Calculado é uma calculadora simples, porém prática e eficiente, desenvolvida utilizando HTML, CSS e JavaScript.
 
-https://calculadorajs-pedrohsb.web.app/
+<a href="https://calculadorajs-pedrohsb.web.app/" target="_blank">calculadora</a>
 
 ## Funcionalidades 🔧
 
